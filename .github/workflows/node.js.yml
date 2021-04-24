@@ -1,5 +1,4 @@
 # This workflow will do a clean install of node dependencies and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
 
@@ -17,7 +16,6 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x, 15.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v2
@@ -30,5 +28,6 @@ jobs:
         KEY: ${{ secrets.KEY }}
         MAX_REQUESTS_PER_MINUTE: ${{ secrets.MAX_REQUESTS_PER_MINUTE }}
         TRUST_PROXY: ${{ secrets.TRUST_PROXY }}
+    - run: "echo KEY and PORT: $KEY $PORT $MAX_REQUESTS_PER_MINUTE"
     - run: npm ci
     - run: npm test
