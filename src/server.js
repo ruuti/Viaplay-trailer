@@ -4,8 +4,12 @@ import routes from "routes";
 import helmet from "helmet";
 import cors from "cors";
 import rateLimit from "express-rate-limit";
+import compression from "compression";
 
 const app = express();
+
+// Use compressions
+app.use(compression());
 
 // Enable CORS for all domains
 const corsOptions = {
