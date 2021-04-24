@@ -1,6 +1,7 @@
 import { Router } from "express";
 import apicache from "apicache";
 import { tmdd, viaplay } from "services";
+import { trailer } from "middlewares";
 
 const router = Router();
 const cache = apicache.middleware;
@@ -29,7 +30,7 @@ const getTrailerFromViaplayUrl = async (url) => {
  * @param {object} req HTTP request argument
  * @param {object} res HTTP response argument
  */
-router.get("/", cache("5 minutes"), async (req, res) => {
+router.get("/", cache("5 minutes"), trailer.getTrailerSchema, async (req, res) => {
   const { url } = req.query;
   const trailerUrl = await getTrailerFromViaplayUrl(url);
   if(trailerUrl) {
