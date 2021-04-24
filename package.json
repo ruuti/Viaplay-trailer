@@ -1,7 +1,7 @@
 {
   "name": "viaplay-trailer",
   "version": "0.0.1",
-  "description": "",
+  "description": "Node service that takes Viaplay movie resource link as input and returns the URL to the trailer for the movie.",
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
@@ -39,5 +39,13 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ]
+  },
+  "keywords": [
+    "Viaplay",
+    "TMDd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruuti/Viaplay-trailer"
   }
 }
