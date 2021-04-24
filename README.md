@@ -11,6 +11,8 @@ Create enviroment configuration file (`.env`) to project root with following con
 ```
 PORT=3000
 KEY=KEY_TO_TMDD
+TRUST_PROXY=1
+MAX_REQUESTS_PER_MINUTE=60
 ```
 
 Run service by executing `npm start`.
