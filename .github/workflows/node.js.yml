@@ -23,11 +23,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm test
       env:
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.KEY }}
         MAX_REQUESTS_PER_MINUTE: ${{ secrets.MAX_REQUESTS_PER_MINUTE }}
         TRUST_PROXY: ${{ secrets.TRUST_PROXY }}
-    - run: echo "KEY and PORT: $KEY $PORT $MAX_REQUESTS_PER_MINUTE"
-    - run: npm ci
-    - run: npm test
