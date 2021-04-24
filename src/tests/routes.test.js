@@ -14,14 +14,16 @@ describe("Trailer endpoint", () => {
     expect(result.statusCode).toBe(404);
     done();
   });
-  test("should respond with 404", async (done) => {
+  test("should respond with 400", async (done) => {
     const result = await request(app).get("/trailer?url=");
-    expect(result.statusCode).toBe(404);
+    expect(result.statusCode).toBe(400);
+    expect(result.body.error).toEqual("\"url\" is not allowed to be empty");
     done();
   });
-  test("should respond with 404", async (done) => {
+  test("should respond with 400", async (done) => {
     const result = await request(app).get("/trailer");
-    expect(result.statusCode).toBe(404);
+    expect(result.statusCode).toBe(400);
+    expect(result.body.error).toEqual("\"url\" is required");
     done();
   });
   test("should rate limit and respond with 429", async (done) => {
