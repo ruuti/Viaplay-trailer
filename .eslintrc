@@ -3,6 +3,7 @@
   "rules": {
     "eqeqeq": "warn",
     "quotes": "warn",
-    "semi": "warn"
-}
+    "semi": "warn",
+    "indent": ["warn", 2]
+  }
 }
