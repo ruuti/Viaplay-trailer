@@ -28,3 +28,4 @@ curl http://localhost:3000/trailer?url=https://content.viaplay.se/pc-se/film/arr
 - [ ] Data models for trailer and error responses.
 - [ ] Logging
 - [ ] Service level caching: HTTP caching (ETag) for Viaplay Content API and TMDb
+- [ ] Only allow url to match with http(s)://content.viaplay.se/*
